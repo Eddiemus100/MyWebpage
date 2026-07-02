@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Civil Engineer & Architect</title>
+    <!-- Google Fonts for a clean, modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+    <style>
+        /* ----- RESET & BASE ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fafaf8;
+            color: #1e1e1e;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ----- HEADER / NAV ----- */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid #eaeaea;
+            background: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #b8860b; /* gold accent for architecture */
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1e1e1e;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #b8860b;
+        }
+
+        /* ----- HERO ----- */
+        .hero {
+            padding: 80px 0 60px 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1 1 400px;
+        }
+
+        .hero-text .tag {
+            color: #b8860b;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero-text h1 {
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin: 16px 0 20px 0;
+            letter-spacing: -1px;
+        }
+
+        .hero-text h1 .highlight {
+            color: #b8860b;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: #4a4a4a;
+            max-width: 480px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #1e1e1e;
+            color: white;
+            padding: 14px 36px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #b8860b;
+        }
+
+        .hero-image {
+            flex: 1 1 400px;
+            background: #d4d0c8;
+            height: 340px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4a4a4a;
+            font-size: 18px;
+            font-weight: 400;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="%237a7a7a" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" /><line x1="2" y1="8" x2="22" y2="8" /><line x1="2" y1="14" x2="22" y2="14" /><line x1="8" y1="2" x2="8" y2="22" /><line x1="14" y1="2" x2="14" y2="22" /></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 60px;
+        }
+        /* (Replace the hero-image background with your own photo later) */
+
+        /* ----- SECTION TITLES ----- */
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+        }
+
+        .section-sub {
+            color: #4a4a4a;
+            margin-bottom: 40px;
+            font-size: 17px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e0ddd8;
+            margin: 60px 0;
+        }
+
+        /* ----- ABOUT ----- */
+        .about-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        .about-grid .bio {
+            flex: 2;
+        }
+
+        .about-grid .bio p {
+            margin-bottom: 16px;
+            color: #2e2e2e;
+        }
+
+        .about-grid .details {
+            flex: 1;
+            background: #ffffff;
+            padding: 24px 30px;
+            border-radius: 10px;
+            border: 1px solid #eaeaea;
+        }
+
+        .details h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 12px;
+        }
+
+        .details ul {
+            list-style: none;
+        }
+
+        .details li {
+            padding: 6px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 15px;
+        }
+
+        .details li:last-child {
+            border-bottom: none;
+        }
+
+        /* ----- PROJECTS (PORTFOLIO) ----- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .project-card {
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #ececec;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.08);
+        }
+
+        .project-thumb {
+            height: 220px;
+            background: #d8d4cd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #5a5a5a;
+            font-size: 14px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="%237a7a7a" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" /><line x1="2" y1="8" x2="22" y2="8" /><line x1="2" y1="14" x2="22" y2="14" /><line x1="8" y1="2" x2="8" y2="22" /><line x1="14" y1="2" x2="14" y2="22" /></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 40px;
+        }
+        /* (Replace each .project-thumb background with your actual project images) */
+
+        .project-info {
+            padding: 20px 24px 24px 24px;
+        }
+
+        .project-info .category {
+            font-size: 13px;
+            color: #b8860b;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-info h3 {
+            font-size: 20px;
+            margin: 6px 0 10px 0;
+        }
+
+        .project-info p {
+            color: #4a4a4a;
+            font-size: 15px;
+        }
+
+        /* ----- SKILLS / SERVICES ----- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 10px;
+        }
+
+        .skill-tag {
+            background: #ffffff;
+            border: 1px solid #e0ddd8;
+            padding: 12px 18px;
+            border-radius: 40px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 24px;
+            margin-top: 30px;
+        }
+
+        .service-item {
+            background: #ffffff;
+            padding: 28px 20px;
+            border-radius: 10px;
+            border: 1px solid #eaeaea;
+            text-align: center;
+        }
+
+        .service-item h4 {
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+
+        .service-item p {
+            font-size: 14px;
+            color: #4a4a4a;
+        }
+
+        /* ----- CONTACT ----- */
+        .contact-box {
+            background: #1e1e1e;
+            color: #ffffff;
+            padding: 50px 48px;
+            border-radius: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .contact-box h2 {
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        .contact-box p {
+            color: #bcbcbc;
+            margin-top: 6px;
+        }
+
+        .contact-box .btn-light {
+            background: #ffffff;
+            color: #1e1e1e;
+            padding: 14px 40px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .contact-box .btn-light:hover {
+            background: #b8860b;
+            color: white;
+        }
+
+        /* ----- FOOTER ----- */
+        footer {
+            text-align: center;
+            padding: 40px 0 30px 0;
+            color: #7a7a7a;
+            font-size: 14px;
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media (max-width: 600px) {
+            .hero-text h1 {
+                font-size: 36px;
+            }
+            .nav-links {
+                gap: 18px;
+                font-size: 14px;
+            }
+            .contact-box {
+                padding: 30px 24px;
+                flex-direction: column;
+                text-align: center;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container nav">
+            <div class="logo"><span>◢</span> EDWIN MUSOLO</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="container hero">
+        <div class="hero-text">
+            <div class="tag">Civil Engineering · Architecture</div>
+            <h1>Building <span class="highlight">structures</span> that last.</h1>
+            <p>
+                I am a civil engineering graduate with a passion for architectural design.
+                I combine structural integrity with aesthetic clarity.
+            </p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+        <div class="hero-image">
+            <!-- Replace this div with <img src="your-photo.jpg" alt="Hero" style="width:100%; height:100%; object-fit:cover; border-radius:12px;" /> -->
+            [ Your Hero Image ]
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="container">
+        <hr />
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+            <div class="bio">
+                <p>
+                    I am a recent civil engineering graduate with a strong focus on architectural visualization
+                    and structural design. My work bridges the gap between technical feasibility and visual
+                    expression.
+                </p>
+                <p>
+                    I have experience in residential, commercial, and infrastructure projects. I believe great
+                    design is not just about how it looks — but how it stands, functions, and serves the community.
+                </p>
+            </div>
+            <div class="details">
+                <h4>Quick Info</h4>
+                <ul>
+                    <li><strong>📍</strong> Based in Kampala</li>
+                    <li><strong>🎓</strong> B.Eng. Civil Engineering</li>
+                    <li><strong>📅</strong> Graduated 2025</li>
+                    <li><strong>⚡</strong> Open for freelance work</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <hr />
+        <h2 class="section-title">Selected Projects</h2>
+        <p class="section-sub">Architectural designs · Structural models · Construction documentation</p>
+    
+        <!-- The cards will be inserted here by JavaScript -->
+        <div id="project-grid" class="projects-grid"></div>
+    </section>
+
+    <!-- SKILLS & SERVICES -->
+    <section id="skills" class="container">
+        <hr />
+        <h2 class="section-title">Skills & Services</h2>
+
+        <h4 style="margin-top: 20px; font-weight: 600;">Software</h4>
+        <div class="skills-grid">
+            <span class="skill-tag">AutoCAD</span>
+            <span class="skill-tag">Revit</span>
+            <span class="skill-tag">Prota structure</span>
+            <span class="skill-tag">SketchUp</span>
+            <span class="skill-tag">Twin Motion</span>
+            <span class="skill-tag">Photoshop</span>
+        </div>
+
+        <h4 style="margin-top: 36px; font-weight: 600;">What I offer</h4>
+        <div class="service-grid">
+            <div class="service-item">
+                <h4>📐 Architectural Design</h4>
+                <p>Concept development, floor plans, elevations, and 3D visualization.</p>
+            </div>
+            <div class="service-item">
+                <h4>🏗️ Structural Analysis</h4>
+                <p>Load calculations, foundation design, and structural detailing.</p>
+            </div>
+            <div class="service-item">
+                <h4>📄 Construction Docs</h4>
+                <p>Working drawings, BOQ, and technical specifications for contractors.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container">
+        <hr />
+        <div class="contact-box">
+            <div>
+                <h2>Let's build something.</h2>
+                <p>Have a project in mind? Reach out for a collaboration.</p>
+            </div>
+            <a href="musoloedwincivilengineering@gmail.com" class="btn-light">Send an Email</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="container">
+        &copy; 2026 EDWIN MUSOLO. Built with care for the built environment.
+    </footer>
+    <script>
+        // Your project list - add new projects here
+        const projects = [
+            {
+                title: "Villa Serenity",
+                category: "Residential",
+                desc: "Modern minimalist house with reinforced concrete frame.",
+                image: "images/villa-serenity.jpg"
+            },
+            {
+                title: "Downtown Office Hub",
+                category: "Commercial",
+                desc: "5-story steel structure with a green roof.",
+                image: "images/office-hub.jpg"
+            },
+            {
+                title: "River Pedestrian Bridge",
+                category: "Infrastructure",
+                desc: "Curved cable-stayed bridge for pedestrians.",
+                image: "images/river-bridge.jpg"
+            }
+            // 👇 To add a new project, just paste a new block here:
+            // {
+            //     title: "New Project Name",
+            //     category: "Category",
+            //     desc: "Short description.",
+            //     image: "images/new-project.jpg"
+            // },
+        ];
+    
+        // This code builds the cards automatically
+        const grid = document.getElementById('project-grid');
+        projects.forEach(project => {
+            const card = document.createElement('div');
+            card.className = 'project-card';
+            card.innerHTML = `
+                <div class="project-thumb">
+                    <img src="${project.image}" alt="${project.title}" style="width:100%; height:100%; object-fit:cover;" />
+                </div>
+                <div class="project-info">
+                    <span class="category">${project.category}</span>
+                    <h3>${project.title}</h3>
+                    <p>${project.desc}</p>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    </script>
+
+</body>
+</html>
